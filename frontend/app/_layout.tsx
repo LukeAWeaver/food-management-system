@@ -6,8 +6,8 @@ import { StatusBar } from 'expo-status-bar'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { Provider } from './Provider'
 import { useTheme } from 'tamagui'
+import Provider from './Provider'
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -63,18 +63,12 @@ function RootLayoutNav() {
             headerShown: false,
           }}
         />
-
-        <Stack.Screen
-          name="modal"
+                <Stack.Screen
+          name="forms/FoodForm"
           options={{
-            title: 'Tamagui + Expo',
+            headerShown: true,
+            animation: 'slide_from_bottom',
             presentation: 'modal',
-            animation: 'slide_from_right',
-            gestureEnabled: true,
-            gestureDirection: 'horizontal',
-            contentStyle: {
-              backgroundColor: theme.background.val,
-            },
           }}
         />
       </Stack>

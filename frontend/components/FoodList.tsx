@@ -1,7 +1,7 @@
 import { useFoodItems } from 'graphql/queries/foodItems'
 import { ListItem, Spinner, YStack, Text } from 'tamagui'
 
-export function FoodList({ usageType }: { usageType: 'snack' | 'meal_ingredient' }) {
+const FoodList = ({ usageType }: { usageType: 'snack' | 'meal_ingredient' }) => {
   const { data, loading, error } = useFoodItems(usageType)
 
   if (loading) {
@@ -24,3 +24,5 @@ export function FoodList({ usageType }: { usageType: 'snack' | 'meal_ingredient'
     </YStack>
   )
 }
+
+export default FoodList

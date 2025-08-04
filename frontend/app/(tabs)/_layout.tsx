@@ -1,6 +1,6 @@
 import { Link, Tabs } from 'expo-router'
 import { Button, useTheme } from 'tamagui'
-import { Atom, AudioWaveform } from '@tamagui/lucide-icons'
+import { Drumstick, Wheat } from '@tamagui/lucide-icons'
 
 export default function TabLayout() {
   const theme = useTheme()
@@ -8,6 +8,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        headerShown: true,
         tabBarActiveTintColor: theme.red10.val,
         tabBarStyle: {
           backgroundColor: theme.background.val,
@@ -23,22 +24,26 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <Atom color={color as any} />,
+          title: 'Snacks',
+          tabBarIcon: ({ color }) => <Drumstick color={color as any} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
-              <Button mr="$4" bg="$green8" color="$green12">
-                Hello!
+            <Link href="/forms/FoodForm" asChild>
+              <Button
+                size="$2"
+                theme="red"
+                style={{ marginRight: 10 }}
+              >
+                + food item
               </Button>
             </Link>
           ),
-        }}
+          }}
       />
       <Tabs.Screen
-        name="two"
+        name="ingredientsList"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <AudioWaveform color={color as any} />,
+          title: 'Ingredients',
+          tabBarIcon: ({ color }) => <Wheat color={color as any} />,
         }}
       />
     </Tabs>
