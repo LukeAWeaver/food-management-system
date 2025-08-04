@@ -15,14 +15,13 @@ FMS is a full-stack app designed to help users track snack and meal ingredients 
 - NestJS generated code-first schema
 
 ## Tech Stack
- ______________________________________________
-/ Layer         | Tech                         \
+
+| Layer         | Tech                         |
 |---------------|------------------------------|
 | Frontend      | Expo, React Native, Tamagui  |
 | State & API   | Apollo Client, GraphQL       |
 | Backend       | NestJS, @nestjs/graphql      |
 | Database      | Prisma ORM, PostgreSQL       |
- \---------------------------------------------/
 
 ## Setup
 
