@@ -13,11 +13,13 @@
     "prisma": "^6.13.0"
   },
   "dependencies": {
+    "@apollo/gateway": "^2.11.2",
     "@nestjs/apollo": "^13.1.0",
     "@nestjs/common": "^11.1.5",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.5",
     "@nestjs/graphql": "^13.1.0",
+    "@nestjs/platform-express": "^11.1.5",
     "@prisma/client": "^6.13.0",
     "apollo-server-express": "^3.13.0",
     "class-transformer": "^0.5.1",

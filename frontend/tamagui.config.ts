@@ -8,5 +8,6 @@ export default config
 export type Conf = typeof config
 
 declare module 'tamagui' {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface TamaguiCustomConfig extends Conf {}
 }
