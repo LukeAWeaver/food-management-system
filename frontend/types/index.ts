@@ -1,0 +1,1 @@
+export type UsageType = 'snack' | 'meal_ingredient'
