@@ -23,4 +23,7 @@ export class FoodItem {
 
   @Field(() => UsageType)
   usageType: UsageType
+
+  @Field()
+  createdAt: Date
 }

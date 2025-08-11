@@ -8,6 +8,7 @@ type FoodItem {
   expirationDate: DateTime!
   location: String!
   usageType: UsageType!
+  createdAt: DateTime!
 }
 
 """
