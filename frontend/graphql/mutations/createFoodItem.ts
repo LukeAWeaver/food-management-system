@@ -10,5 +10,9 @@ export const CREATE_FOOD_ITEM = gql`
 `
 
 export function useCreateFoodItem() {
-  return useMutation(CREATE_FOOD_ITEM)
+  return useMutation(CREATE_FOOD_ITEM, {
+    onError: (e) => {
+      console.warn('CreateFoodItem failed:', e.message)
+    },
+  })
 }

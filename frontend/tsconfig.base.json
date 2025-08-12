@@ -1,35 +1,35 @@
 {
   "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+
     "baseUrl": ".",
     "rootDir": ".",
-    "importHelpers": true,
+    "paths": {},
+
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
+    "downlevelIteration": true,
     "preserveSymlinks": true,
     "incremental": true,
-    "jsx": "react-jsx",
-    "module": "system",
-    "moduleResolution": "node",
-    "noEmitOnError": false,
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+
+    "removeComments": false,
+    "sourceMap": false,
+
+    "resolveJsonModule": true,
     "useUnknownInCatchVariables": false,
     "preserveConstEnums": true,
-    // DONT DO THIS so jsdoc will remain
-    "removeComments": false,
-    "skipLibCheck": true,
-    "sourceMap": false,
-    "strictNullChecks": true,
-    "target": "es2020",
-    "types": ["node"],
-    "lib": ["dom", "esnext"]
+
+    "lib": ["ESNext", "DOM"],
+    "types": ["react", "react-native"]
   },
   "exclude": ["_"],
-  "typeAcquisition": {
-    "enable": true
-  }
+  "typeAcquisition": { "enable": true }
 }

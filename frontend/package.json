@@ -2,11 +2,11 @@
   "name": "food-management-system",
   "main": "expo-router/entry",
   "version": "1.0.0",
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "npm@10",
   "private": true,
   "scripts": {
-    "upgrade:tamagui": "yarn up '*tamagui*'@latest '@tamagui/*'@latest",
-    "upgrade:tamagui:canary": "yarn up '*tamagui*'@canary '@tamagui/*'@canary",
+    "upgrade:tamagui": "npm i tamagui@latest @tamagui/cli@latest @tamagui/babel-plugin@latest @tamagui/metro-plugin@latest @tamagui/config@latest @tamagui/portal@latest @tamagui/toast@latest @tamagui/lucide-icons@latest @tamagui/font-inter@latest",
+    "upgrade:tamagui:canary": "npm i tamagui@canary @tamagui/cli@canary @tamagui/babel-plugin@canary @tamagui/metro-plugin@canary @tamagui/config@canary @tamagui/portal@canary @tamagui/toast@canary @tamagui/lucide-icons@canary @tamagui/font-inter@canary",
     "check:tamagui": "tamagui check",
     "start": "expo start -c",
     "android": "expo run:android",
@@ -21,8 +21,10 @@
   "dependencies": {
     "@apollo/client": "3.13.9",
     "@react-navigation/native": "6.1.18",
+    "@shopify/flash-list": "^2.0.2",
     "@tamagui/config": "1.132.16",
     "@tamagui/lucide-icons": "1.132.16",
+    "@tamagui/portal": "1.132.16",
     "@tamagui/toast": "1.132.16",
     "@tanstack/react-query": "5.84.2",
     "babel-preset-expo": "~13.0.0",
@@ -44,6 +46,7 @@
     "react-native-reanimated": "3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "4.11.1",
+    "react-native-super-grid": "^6.0.1",
     "react-native-svg": "15.11.2",
     "react-native-web": "0.20.0",
     "tamagui": "1.132.16"
@@ -67,6 +70,9 @@
   "overrides": {
     "metro": "0.82.5",
     "metro-config": "0.82.5",
-    "metro-transform-worker": "0.82.5"
+    "metro-transform-worker": "0.82.5",
+    "tamagui": "1.132.16",
+    "@tamagui/*": "1.132.16",
+    "react-dom": "19.0.0"
   }
 }

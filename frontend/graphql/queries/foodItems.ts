@@ -1,4 +1,5 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query'
+import { Platform } from 'react-native'
 
 type UsageType = 'snack' | 'meal_ingredient'
 
@@ -30,16 +31,19 @@ const GET_FOOD_ITEMS_BY_USAGE_TYPE = `
   }
 `
 
+const GRAPHQL_URL =
+  Platform.OS === 'web'
+    ? 'http://localhost:3000/graphql'
+    : 'http://192.168.0.144:3000/graphql' // ← change to your LAN IP
+
 async function fetchFoodItems(usageType: UsageType): Promise<FoodItem[]> {
-  const res = await fetch('http://localhost:3000/graphql', {
+  const res = await fetch(GRAPHQL_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       query: GET_FOOD_ITEMS_BY_USAGE_TYPE,
-      variables: { usageType }
-    })
+      variables: { usageType },
+    }),
   })
 
   if (!res.ok) {
@@ -55,6 +59,6 @@ export function useFoodItems(usageType: UsageType): UseQueryResult<FoodItem[], E
     queryKey: ['foodItemsByUsageType', usageType],
     queryFn: () => fetchFoodItems(usageType),
     staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 30, 
+    gcTime: 1000 * 60 * 30,
   })
 }
