@@ -38,7 +38,7 @@ function MyTabBar({ state, descriptors, navigation }: any) {
   const insets = useSafeAreaInsets()
   const router = useRouter()
 
-  const activeColor = theme.red10.val
+  const activeColor = theme?.red10?.val
   const inactiveColor = theme.color.val
 
   const renderTab = (route: any, index: number) => {

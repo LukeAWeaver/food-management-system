@@ -7,13 +7,9 @@ type WithId = { id: string }
 export type ResponsiveGridProps<T extends WithId> = {
   data: T[]
   renderItem: (item: T, index: number) => React.ReactNode
-  /** gap between tiles (px) */
   gap?: number
-  /** horizontal padding inside the grid (px) */
   contentPadding?: number
-  /** breakpoint for switching columns (px) */
   tabletBreakpoint?: number
-  /** columns for phone / tablet */
   phoneColumns?: number
   tabletColumns?: number
   keyExtractor?: (item: T, index: number) => string
@@ -71,8 +67,6 @@ function ResponsiveGridInner<T extends WithId>({
         contentContainerStyle={{
           paddingHorizontal: contentPadding,
           paddingVertical: halfGap,
-          // balance per-item horizontal margins so outer edges align to padding
-          marginHorizontal: -halfGap,
         }}
         // No ItemSeparator; vertical spacing comes from per-item margins
         renderItem={({ item, index }) => (
