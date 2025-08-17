@@ -164,7 +164,7 @@ export default function RecipesScreen(): React.ReactElement {
       return null
     }
     return (
-      <YStack gap="$1" mt="$2">
+      <YStack gap="$1" marginTop="$2">
         {items.map((ing: string, idx: number) => ( <XStack justify-items="center" key={`${idMeal}-ing-${idx}`} gap="$1">
             <X/>
             <SizableText key={`${idMeal}-${idx}`} size="$2" color="$color">
@@ -179,7 +179,7 @@ export default function RecipesScreen(): React.ReactElement {
   const renderItem = useCallback(({ item }: { item: MealListItem }): React.ReactElement => {
     return (
       <Pressable onPress={() => router.push(`/recipes/${item.idMeal}`)}>
-        <XStack background="$red8" align-items="center" p="$3" style={{ borderRadius: 12 }} borderWidth={1} border-color="$gray5" mx="$2" my="$2" gap="$3">
+        <XStack background="$red8" align-items="center" padding="$3" style={{ borderRadius: 12 }} borderWidth={1} border-color="$gray5" marginHorizontal="$2" marginVertical="$2" gap="$3">
           <Image
             source={{ uri: item.strMealThumb }}
             style={{ width: 72, height: 72, borderRadius: 12 }}
@@ -204,7 +204,7 @@ export default function RecipesScreen(): React.ReactElement {
   }, [])
 
   return (
-    <YStack background="$blue5" flex={1} p="$3" gap="$3">
+    <YStack background="$blue5" flex={1} padding="$3" gap="$3">
       <Text fontSize="$8" text-align="center">
         Meal ideas by ingredient
       </Text>

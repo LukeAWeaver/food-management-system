@@ -1,8 +1,8 @@
 import { useFoodItems } from 'graphql/queries/foodItems'
 import { Spinner, YStack, Text } from 'tamagui'
-import FoodItemCard from './FoodItem'
 import type {  UsageType } from 'types'
 import { ResponsiveGrid } from './grid/ResponsiveGrid'
+import FoodItemCard from './FoodItemCard'
 
 interface FoodListProps {
   usageType: UsageType

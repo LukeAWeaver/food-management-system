@@ -1,15 +1,7 @@
 import { router } from 'expo-router'
 import { useEffect, useMemo, useState } from 'react'
 import { Button, ListItem, XStack, SizableText, YStack, useTheme } from 'tamagui'
-import { UsageType } from 'types'
-
-type FoodItem = {
-  id: string
-  name: string
-  expirationDate: string
-  createdAt: string
-  location: string
-}
+import { UsageType, FoodItem } from 'types'
 
 interface FoodItemProps {
   item: FoodItem
@@ -38,7 +30,7 @@ const formatRemaining = (expirationISO: string, nowMs: number): string => {
   return `${secs}s`
 }
 
-const FoodItem = ({ item, usageType }: FoodItemProps) => {
+const FoodItemCard = ({ item, usageType }: FoodItemProps) => {
   const theme = useTheme()
 
   const createdMs = useMemo(() => new Date(item.createdAt).getTime(), [item.createdAt])
@@ -66,7 +58,7 @@ const FoodItem = ({ item, usageType }: FoodItemProps) => {
     return clamp(remainingMs / totalMs, 0, 1)
   }, [remainingMs, totalMs])
 
-  const barBg = theme.green5.val
+  const barBg = theme?.green5?.val
   const barFill = theme.green10?.val
 
   const isExpired = label === 'EXPIRED'
@@ -77,12 +69,12 @@ const FoodItem = ({ item, usageType }: FoodItemProps) => {
       borderWidth={1}
       style={{ borderRadius: 8}}
       borderColor="$borderColor"
-      p="$2"
+      padding="$2"
       title={
-        <XStack flex={1} width="100%" justify="space-between">
+        <XStack flex={1} width="100%" justify-content="space-between">
           <SizableText size={"$6"} fontWeight={"bold"}>{item.name}</SizableText>
           { usageType === 'meal_ingredient' &&
-           <Button size="$2" ml="$2"   onPress={(): void => {
+           <Button size="$2" marginLeft="$2"   onPress={(): void => {
             router.push({ pathname: '/recipes', params: { ingredient: item.name } })
             }} >
             Recipe Ideas
@@ -108,7 +100,7 @@ const FoodItem = ({ item, usageType }: FoodItemProps) => {
                 { (isExpired ? "" : "Spoil Time: ") + label}
             </SizableText>
             <YStack
-                mt="$2"
+                marginTop="$2"
                 width="100%"
                 height={8}
                 borderWidth={1}
@@ -130,4 +122,4 @@ const FoodItem = ({ item, usageType }: FoodItemProps) => {
   )
 }
 
-export default FoodItem
+export default FoodItemCard

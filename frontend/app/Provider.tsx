@@ -6,8 +6,8 @@ import { ToastProvider, ToastViewport } from '@tamagui/toast'
 import { ApolloProvider } from '@apollo/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import { CurrentToast } from '../components/CurrentToast'       // ✅ NOT under app/
-import { config } from '../tamagui.config'
+import { CurrentToast } from '../components/CurrentToast'
+import config from '../tamagui.config'
 import client from 'services/apolloClient'
 
 const queryClient = new QueryClient()
